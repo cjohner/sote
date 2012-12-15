@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epml:epml xmlns:epml="http://www.epml.de"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="epml_1_draft.xsd">
+  <epc EpcId="1" Name="EPC">
+    <event id="1">
+      <graphics>
+        <position height="41" width="81" x="195" y="25"/>
+      </graphics>
+      <name>Event</name>
+    </event>
+    <function id="2">
+      <graphics>
+        <position height="41" width="81" x="195" y="105"/>
+      </graphics>
+      <name>Function</name>
+    </function>
+    <xor id="4">
+      <graphics>
+        <position height="31" width="31" x="220" y="185"/>
+      </graphics>
+      <name/>
+    </xor>
+    <event id="5">
+      <graphics>
+        <position height="41" width="81" x="115" y="255"/>
+      </graphics>
+      <name>Event</name>
+    </event>
+    <event id="6">
+      <graphics>
+        <position height="41" width="81" x="280" y="250"/>
+      </graphics>
+      <name>Event</name>
+    </event>
+    <function id="7">
+      <graphics>
+        <position height="41" width="81" x="115" y="340"/>
+      </graphics>
+      <name>Function</name>
+    </function>
+    <function id="8">
+      <graphics>
+        <position height="41" width="81" x="280" y="340"/>
+      </graphics>
+      <name>Function</name>
+    </function>
+    <xor id="9">
+      <graphics>
+        <position height="31" width="31" x="240" y="415"/>
+      </graphics>
+      <name/>
+    </xor>
+    <event id="10">
+      <graphics>
+        <position height="41" width="81" x="215" y="520"/>
+      </graphics>
+      <name>Event</name>
+    </event>
+    <arc id="12">
+      <graphics>
+        <position x="235" y="66"/>
+        <position x="235" y="105"/>
+      </graphics>
+      <flow source="1" target="2"/>
+    </arc>
+    <arc id="13">
+      <graphics>
+        <position x="235" y="146"/>
+        <position x="235" y="185"/>
+      </graphics>
+      <flow source="2" target="4"/>
+    </arc>
+    <arc id="14">
+      <graphics>
+        <position x="220" y="216"/>
+        <position x="155" y="255"/>
+      </graphics>
+      <flow source="4" target="5"/>
+    </arc>
+    <arc id="15">
+      <graphics>
+        <position x="155" y="296"/>
+        <position x="155" y="340"/>
+      </graphics>
+      <flow source="5" target="7"/>
+    </arc>
+    <arc id="16">
+      <graphics>
+        <position x="155" y="381"/>
+        <position x="240" y="415"/>
+      </graphics>
+      <flow source="7" target="9"/>
+    </arc>
+    <arc id="17">
+      <graphics>
+        <position x="251" y="216"/>
+        <position x="320" y="250"/>
+      </graphics>
+      <flow source="4" target="6"/>
+    </arc>
+    <arc id="18">
+      <graphics>
+        <position x="320" y="291"/>
+        <position x="320" y="340"/>
+      </graphics>
+      <flow source="6" target="8"/>
+    </arc>
+    <arc id="19">
+      <graphics>
+        <position x="320" y="381"/>
+        <position x="271" y="415"/>
+      </graphics>
+      <flow source="8" target="9"/>
+    </arc>
+    <arc id="20">
+      <graphics>
+        <position x="255" y="446"/>
+        <position x="255" y="520"/>
+      </graphics>
+      <flow source="9" target="10"/>
+    </arc>
+  </epc>
+</epml:epml>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="CoolTool">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../../Programme/eclipse3.2"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="CoolTool.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/gnujaxp.jar"/>
+        <pathelement location="lib/itext-2.0.6.jar"/>
+        <pathelement location="lib/jcommon-1.0.12.jar"/>
+        <pathelement location="lib/jfreechart-1.0.7.jar"/>
+        <pathelement location="lib/jfreechart-1.0.7-experimental.jar"/>
+        <pathelement location="lib/jfreechart-1.0.7-swt.jar"/>
+        <pathelement location="lib/junit.jar"/>
+        <pathelement location="lib/servlet.jar"/>
+        <pathelement location="lib/swtgraphics2d.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src" excludes="**/*.launch, **/*.java"/>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="CoolTool.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="IText">
+        <java classname="itext.IText" failonerror="true" fork="yes">
+            <classpath refid="CoolTool.classpath"/>
+        </java>
+    </target>
+    <target name="FreeChart">
+        <java classname="jfreechart.FreeChart" failonerror="true" fork="yes">
+            <classpath refid="CoolTool.classpath"/>
+        </java>
+    </target>
+</project>
